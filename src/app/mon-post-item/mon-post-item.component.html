@@ -1,0 +1,14 @@
+<li [ngClass] = "{'list-group-item': true,
+                  'list-group-item-success': loveIts > '0',
+                  'list-group-item-danger': loveIts < '0' }">
+  <h5 style = " float:right; color:grey ; ">{{ created_at | date : 'M/d/yyyy hh:mm a' }}</h5>
+  <h2 [ngStyle]="{color: getColor()}">{{ monPostTitle }} <span class="badge"> {{ loveIts }} </span></h2> 
+  <h4 [ngStyle]="{color: getColor()}">{{ monPostContent }} </h4>
+  <button class="btn btn-success" 
+      (click)="increaseLike()">Love it!</button>
+  &nbsp;
+  <button class="btn btn-danger" 
+      (click)="decreaseLike()">Don't love it!</button>  
+  <button class="btn btn-danger pull-right" 
+      (click)="onDelete()">Supprimer</button>   
+</li>

@@ -1,0 +1,13 @@
+
+<h1>
+    Posts
+</h1>
+    
+<app-mon-post-item *ngFor = "let Post of Posts; let i = index"
+                [monPostTitle]="Post.title"
+                [monPostContent]="Post.content" 
+                [index] = "i"
+                [loveIts] = "Post.loveIts" ></app-mon-post-item>
+                
+<button class="btn btn-primary"
+                (click)="onFetch()">Récupérer les post</button>
